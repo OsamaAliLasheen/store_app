@@ -10,11 +10,12 @@ class AllCategoriesService {
     Response response =
     await get(Uri.parse('https://fakestoreapi.com/products/categories'));
 
-    List<String> categoriesList = jsonDecode(response.body);
-
-    
-
-    return categoriesList;
+    if (response.statusCode == 200) {
+  List<String> categoriesList = jsonDecode(response.body);
+  return categoriesList;
+} else {
+  throw Exception('Request failed with status: ${response.statusCode}.'); 
+}
   }
   
 }
