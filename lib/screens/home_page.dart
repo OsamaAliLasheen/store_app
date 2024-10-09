@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:store_app/Custom%20widgets/product_card.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,7 +17,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.trolley))
+          IconButton(onPressed: () {}, icon: const Icon(FontAwesomeIcons.cartPlus))
         ],
         title: const Text('New Trend'),
         centerTitle: true,
