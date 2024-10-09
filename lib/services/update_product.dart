@@ -5,8 +5,8 @@ import 'package:http/http.dart';
 import 'package:store_app/helper/api.dart';
 import 'package:store_app/models/product_model.dart';
 
-class UpdatateProduct {
-  Future <ProductModel> updateProduct(
+class UpdateProduct {
+  Future <ProductModel> updateProductService(
       {required String title,
       required String price,
       required String description,
