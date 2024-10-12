@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ProductCard extends StatefulWidget {
   const ProductCard({
@@ -15,7 +14,7 @@ class _ProductCardState extends State<ProductCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 220,
+      height: 150,
       width: 220,
       decoration: BoxDecoration(boxShadow: [
         BoxShadow(
@@ -43,7 +42,10 @@ class _ProductCardState extends State<ProductCard> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(r'$Price'),
+                  const Text(
+                    r'$Price',
+                    style: TextStyle(fontSize: 14),
+                  ),
                   IconButton(
                     onPressed: () {
                       setState(() {
