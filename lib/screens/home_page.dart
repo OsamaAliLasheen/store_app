@@ -15,16 +15,30 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(FontAwesomeIcons.cartPlus))
-        ],
-        title: const Text('New Trend'),
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: ProductCard(),
-      ),
-    );
+        appBar: AppBar(
+          actions: [
+            IconButton(
+                onPressed: () {}, icon: const Icon(FontAwesomeIcons.cartPlus))
+          ],
+          title: const Text('New Trend'),
+          centerTitle: true,
+        ),
+        body: Padding(
+          padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 60),
+          child: GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 1.3,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 100,
+              ),
+              physics: const BouncingScrollPhysics().applyTo(
+                  const BouncingScrollPhysics(
+                      decelerationRate: ScrollDecelerationRate.fast)),
+              clipBehavior: Clip.none,
+              itemBuilder: (context, index) {
+                return const ProductCard();
+              }),
+        ));
   }
 }
