@@ -7,7 +7,7 @@ class RatingModel {
 
   factory RatingModel.fromJson(json) {
     return RatingModel(
-      rate: json['rate'],
+      rate: (json['rate'] is int) ? (json['rate'] as int).toDouble() : json['rate'],
       count: json['count'],
     );
   }

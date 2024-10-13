@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/models/product_model.dart';
 
 class ProductCard extends StatefulWidget {
-  const ProductCard({
-    super.key,
-  });
+  ProductCard({super.key, required this.product});
+  ProductModel product;
 
   @override
   State<ProductCard> createState() => _ProductCardState();
@@ -33,9 +33,9 @@ class _ProductCardState extends State<ProductCard> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Product name',
-                    style: TextStyle(
+                  Text(
+                    widget.product.title!.substring(0, 18),
+                    style: const TextStyle(
                         fontSize: 16,
                         color: Colors.grey,
                         fontWeight: FontWeight.bold),
@@ -43,9 +43,9 @@ class _ProductCardState extends State<ProductCard> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
-                        r'$Price',
-                        style: TextStyle(fontSize: 14),
+                      Text(
+                        r'$' "${widget.product.price.toString()}",
+                        style: const TextStyle(fontSize: 14),
                       ),
                       IconButton(
                         onPressed: () {
@@ -68,9 +68,9 @@ class _ProductCardState extends State<ProductCard> {
           bottom: 85,
           left: 70,
           child: Image.network(
-            "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+            widget.product.image!,
             height: 100,
-            width: 120,
+            width: 100,
           ),
         )
       ],
