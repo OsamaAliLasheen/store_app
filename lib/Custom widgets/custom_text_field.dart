@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class CustomTextField extends StatelessWidget {
   CustomTextField({
@@ -26,9 +27,11 @@ class CustomTextField extends StatelessWidget {
             labelText: labelText,
             enabledBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: Colors.black),
+              borderRadius: BorderRadius.all(Radius.circular(8.0)),
             ),
             focusedBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: Colors.black),
+              borderRadius: BorderRadius.all(Radius.circular(8.0)),
             )),
       ),
     );
