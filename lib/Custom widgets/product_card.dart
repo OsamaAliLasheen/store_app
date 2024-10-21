@@ -16,7 +16,7 @@ class _ProductCardState extends State<ProductCard> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, UpdateProductPage.id);
+        Navigator.pushNamed(context, UpdateProductPage.id, arguments: widget.product);
       },
       child: Stack(
         clipBehavior: Clip.none,

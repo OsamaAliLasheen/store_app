@@ -1,12 +1,11 @@
-
 import 'dart:convert';
 
 import 'package:http/http.dart';
 import 'package:store_app/helper/api.dart';
 import 'package:store_app/models/product_model.dart';
 
-class UpdateProduct {
-  Future <ProductModel> updateProductService(
+class UpdateProductService {
+  Future<ProductModel> updateProduct(
       {required String title,
       required String price,
       required String description,
@@ -22,8 +21,9 @@ class UpdateProduct {
     });
     if (response.statusCode == 200) {
       return ProductModel.fromJson(jsonDecode(response.body));
-    } else{
-      throw Exception('Request failed with status: ${response.statusCode} with body: ${jsonDecode(response.body)}');  
+    } else {
+      throw Exception(
+          'Request failed with status: ${response.statusCode} with body: ${jsonDecode(response.body)}');
     }
   }
 }
