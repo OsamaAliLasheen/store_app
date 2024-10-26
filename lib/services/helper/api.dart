@@ -61,7 +61,7 @@ Future<dynamic> put(
     }
 
     http.Response response =
-        await http.post(Uri.parse('https://fakestoreapi.com/products'),
+        await http.put(Uri.parse('https://fakestoreapi.com/products'),
             body: {
               'title': 'test',
               'price': '13.5',
@@ -70,12 +70,14 @@ Future<dynamic> put(
               'category': 'electronic'
             },
             headers: headers);
+            response = jsonDecode(response.body);
 
     if (response.statusCode == 200) {
-      return jsonDecode(response.body);
+      return response;
     } else {
       throw Exception('Request failed with status: ${response.statusCode}.');
   }
+  
 }
 
 }

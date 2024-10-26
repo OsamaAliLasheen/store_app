@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
-import 'package:store_app/helper/api.dart';
+import 'package:store_app/services/helper/api.dart';
 import 'package:store_app/models/product_model.dart';
 
 class UpdateProductService {
@@ -12,7 +12,7 @@ class UpdateProductService {
       required String image,
       required String category}) async {
     Response response =
-        await API().post(url: 'https://fakestoreapi.com/products', body: {
+        await API().put(url: 'https://fakestoreapi.com/products', body: {
       'title': title,
       'price': price,
       'description': description,
